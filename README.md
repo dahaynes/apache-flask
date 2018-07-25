@@ -14,7 +14,8 @@ then automatically installs from those requirements. `flask`,
 `flask-wtf`, and `mod-wsgi` are all preinstalled in this image, along
 with their requirements.
 
-See an of how to use this [here](https://github.com/wesbarnett/movie-ratings/blob/master/Dockerfile).
+See an example of how to use this
+[here](https://github.com/wesbarnett/movie-ratings/blob/master/Dockerfile).
 
 When you run your image with `docker run` it will execute `apache2ctl
 -D FOREGROUND`. Ports `80` and `443` are exposed, and apache module
