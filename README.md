@@ -15,5 +15,5 @@ those requirements.
 See an example [here](https://github.com/wesbarnett/movie-ratings/blob/master/Dockerfile).
 
 When you run your image with `docker run` it will execute `apache2ctl
--D FOREGROUND`. Ports `80` and `443` are exposed, and apache modules
-`rewrite` and `ssl` are enabled by default.
+-D FOREGROUND`. Ports `80` and `443` are exposed, and apache module
+`ssl` is enabled by default.
