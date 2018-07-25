@@ -1,32 +1,23 @@
 ARG BASE
 FROM ${BASE} as base
 
-MAINTAINER Rui Carmo https://github.com/rcarmo
+MAINTAINER Wes Barnett https://github.com/wesbarnett
 
 RUN apt-get update \
- && apt-get dist-upgrade -y \
- && apt-get install -y \
-     build-essential \
-     libbz2-dev \
-     libexpat1-dev \
-     libffi-dev \
-     libgdbm-dev \
-     libjpeg-dev \
-     liblapack-dev \
-     liblzma-dev \
-     libncurses5-dev \
-     libreadline-dev \
-     libssl-dev \
-     libsqlite3-dev \
-     libxml2-dev \
-     libxslt-dev \
-     lzma-dev \
-     git \
-     gfortran \
-     wget \
-     xz-utils \
-     zlib1g-dev \
- && apt-get clean && rm -rf /var/lib/apt/lists/*
+    && apt-get upgrade -y \
+    && apt-get install --no-install-recommends -y \
+        apache2 \
+        apache2-dev \
+        build-essential \
+        libapache2-mod-wsgi-py3 \
+        python3-dev \
+        python3-pip \
+        python3-setuptools\
+        vim \
+    && apt-get clean \ 
+    && apt-get autoremove \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install --upgrade pip
 
 ARG VCS_REF
 ARG VCS_URL
