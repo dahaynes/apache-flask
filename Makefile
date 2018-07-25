@@ -1,8 +1,8 @@
 export ARCH=x86_64
-export BASE=ubuntu:rolling
-export IMAGE_NAME=wesbarnett/ubuntu-flask
+export BASE=ubuntu:bionic
+export IMAGE_NAME=wesbarnett/apache-flask
 export VCS_REF=`git rev-parse --short HEAD`
-export VCS_URL=https://github.com/wesbarnett/ubuntu-flask
+export VCS_URL=https://github.com/wesbarnett/apache-flask
 export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
 
 all: build-userland build-onbuild
@@ -20,7 +20,7 @@ build-onbuild:
 		--build-arg VCS_URL=$(VCS_URL) \
 		--build-arg ARCH=$(ARCH) \
 		--pull=false \
-		-t $(IMAGE_NAME):onbuild-$(ARCH) onbuild
+		-t $(IMAGE_NAME):bionic-$(ARCH) onbuild
 
 clean:
 	-docker rm -v $$(docker ps -a -q -f status=exited)

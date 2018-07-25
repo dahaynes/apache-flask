@@ -1,4 +1,4 @@
-# ubuntu-flask
+# apache-flask
 
 A base Docker container for running Python3 Flask/Apache applications
 with an Ubuntu userland.
@@ -16,7 +16,7 @@ preinstalled in this image, along with their requirements.
 
 A minimal Dockerfile looks like:
 
-    FROM wesbarnett/ubuntu-flask:onbuild-x86_64
+    FROM wesbarnett/apache-flask:bionic-x86_64
 
     # Copy and enable Apache configuration files
     COPY default.conf /etc/apache2/sites-available/
