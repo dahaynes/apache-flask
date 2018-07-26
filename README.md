@@ -40,7 +40,7 @@ I could use SSL certs from Let's Encrypt.
 * [Example Apache configs](https://github.com/wesbarnett/movie-ratings/tree/master/apache)
 
 The Docker repository is located
-[here](https://hub.docker.com/r/wesbarnett/ubuntu-flask/).
+[here](https://hub.docker.com/r/wesbarnett/apache-flask/).
 
 When you run your image with `docker run` it will execute `apache2ctl
 -D FOREGROUND`. Ports `80` and `443` are exposed, and apache module
