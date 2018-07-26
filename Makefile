@@ -5,22 +5,14 @@ export VCS_REF=`git rev-parse --short HEAD`
 export VCS_URL=https://github.com/wesbarnett/apache-flask
 export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
 
-all: build-userland build-onbuild
+all: build
 
-build-userland:
+build:
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
 		--build-arg BASE=$(BASE) \
-		-t $(IMAGE_NAME):userland-$(ARCH) userland
-
-build-onbuild:
-	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
-		--build-arg VCS_REF=$(VCS_REF) \
-		--build-arg VCS_URL=$(VCS_URL) \
-		--build-arg ARCH=$(ARCH) \
-		--pull=false \
-		-t $(IMAGE_NAME):bionic-$(ARCH) onbuild
+		-t $(IMAGE_NAME):bionic-$(ARCH) .
 
 clean:
 	-docker rm -v $$(docker ps -a -q -f status=exited)
