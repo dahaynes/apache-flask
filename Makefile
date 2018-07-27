@@ -4,6 +4,7 @@ export IMAGE_NAME=wesbarnett/apache-flask
 export VCS_REF=`git rev-parse --short HEAD`
 export VCS_URL=https://github.com/wesbarnett/apache-flask
 export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
+export MAINTAINER="wes@barnett.science"
 
 all: build
 

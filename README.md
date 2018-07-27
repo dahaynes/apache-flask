@@ -13,9 +13,9 @@ Alternatively mount the project and configuration files with the `-v`
 flag when you use `docker run`. 
 
 Place `requirements.txt` in the same directory as your Dockerfile for
-additional requirements. The image then automatically installs from
-those requirements. `flask`, `flask-wtf`, and `mod-wsgi`
-are all preinstalled in this image, along with their requirements.
+additional requirements. You need at least the `flask` and `mod-wsgi`
+packages. The image then automatically installs from those
+requirements. 
 
 A minimal example is in the `example` folder.
 

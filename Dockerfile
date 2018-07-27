@@ -7,15 +7,13 @@ ARG BUILD_DATE
 LABEL org.label-schema.vcs-ref = $VCS_REF \
       org.label-schema.vcs-url = $VCS_URL \
       org.label-schema.build-date = $BUILD_DATE \
-      maintainer.name = "Wes Barnett" \
-      maintainer.url = "https://github.com/wesbarnett"
+      maintainer = $MAINTAINER
 
 RUN apt-get update \
-    && apt-get upgrade -y \
     && apt-get install --no-install-recommends -y \
         apache2 \
         apache2-dev \
-        build-essential \
+        build-essential \ 
         libapache2-mod-wsgi-py3 \
         python3-dev \
         python3-pip \
@@ -23,8 +21,7 @@ RUN apt-get update \
     && apt-get clean \ 
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* \
-    && pip3 install --upgrade pip \
-    && pip --no-cache-dir install flask flask-wtf mod-wsgi
+    && pip3 install --upgrade pip
 
 ONBUILD COPY ./requirements.txt /tmp/requirements.txt
 ONBUILD RUN pip --no-cache-dir install -r /tmp/requirements.txt \
@@ -33,4 +30,4 @@ ONBUILD RUN pip --no-cache-dir install -r /tmp/requirements.txt \
 
 ONBUILD EXPOSE 80 443
 
-ONBUILD CMD /usr/sbin/apache2ctl -D FOREGROUND
+ONBUILD CMD /usr/sbin/apache2ctl -DFOREGROUND
