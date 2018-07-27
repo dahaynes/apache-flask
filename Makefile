@@ -1,4 +1,4 @@
-export ARCH=x86_64
+export ARCH=`uname -m`
 export BASE=ubuntu:bionic
 export IMAGE_NAME=wesbarnett/apache-flask
 export VCS_REF=`git rev-parse --short HEAD`
@@ -13,6 +13,7 @@ build:
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
 		--build-arg BASE=$(BASE) \
+		--build-arg MAINTAINER=$(MAINTAINER) \
 		-t $(IMAGE_NAME):bionic-$(ARCH) .
 
 clean:
