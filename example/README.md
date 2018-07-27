@@ -25,6 +25,5 @@ To test do:
 
     curl localhost
 
-You should see "It works!". Additionally you should now have an entry
-in the host system's system log indicating that the website was
-accessed.
+You should see `It works!`. Additionally you should now have an entry
+in the host's system log indicating that the website was accessed.
