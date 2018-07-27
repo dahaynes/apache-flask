@@ -11,7 +11,7 @@ create a Dockerfile and use `FROM` to set this as the base image.
 
 The following images are available:
 
-* `wesbarnett/apache-flask:bionic-x86_64`.
+* `wesbarnett/apache-flask:bionic-x86_64`
 
 From there you Dockerfile should copy your Apache configuration files
 and your Flask project and then enable your Apache configuration
