@@ -7,7 +7,7 @@ ARG BUILD_DATE
 LABEL org.label-schema.vcs-ref = $VCS_REF \
       org.label-schema.vcs-url = $VCS_URL \
       org.label-schema.build-date = $BUILD_DATE \
-      maintainer.name = "Wes Barnett"
+      maintainer.name = "Wes Barnett" \
       maintainer.url = "https://github.com/wesbarnett"
 
 RUN apt-get update \
