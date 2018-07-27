@@ -4,12 +4,14 @@ FROM ${BASE} as base
 ARG VCS_REF
 ARG VCS_URL
 ARG BUILD_DATE
-LABEL org.label-schema.vcs-ref = $VCS_REF \
-      org.label-schema.vcs-url = $VCS_URL \
-      org.label-schema.build-date = $BUILD_DATE \
-      maintainer = $MAINTAINER
+ARG MAINTAINER
+LABEL vcs-ref = $VCS_REF
+LABEL vcs-url = $VCS_URL
+LABEL build-date = $BUILD_DATE
+LABEL maintainer = $MAINTAINER
 
 RUN apt-get update \
+    && apt-get upgrade -y \
     && apt-get install --no-install-recommends -y \
         apache2 \
         apache2-dev \
@@ -30,4 +32,4 @@ ONBUILD RUN pip --no-cache-dir install -r /tmp/requirements.txt \
 
 ONBUILD EXPOSE 80 443
 
-ONBUILD CMD /usr/sbin/apache2ctl -DFOREGROUND
+ONBUILD CMD ["/usr/sbin/apache2ctl","-DFOREGROUND"]
