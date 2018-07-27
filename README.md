@@ -28,7 +28,7 @@ those requirements.
 A minimal working example is in the `example` folder. I recommend
 using this as a template to build your Docker Flask project.
 
-A example of a project using SSL is
+Additionally, an example of a project using SSL is
 [here](https://github.com/wesbarnett/movie-ratings).
 
 ## Docker repository
