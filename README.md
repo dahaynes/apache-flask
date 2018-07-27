@@ -13,20 +13,19 @@ Alternatively mount the project and configuration files with the `-v`
 flag when you use `docker run`. 
 
 Place `requirements.txt` in the same directory as your Dockerfile for
-additional requirements. You need at least the `flask` and `mod-wsgi`
-packages. The image then automatically installs from those
-requirements. 
+additional Python package requirements. You need at least the `flask`
+and `mod-wsgi` packages. The image then automatically installs from
+those requirements. 
 
-A minimal example is in the `example` folder.
+## Example
 
-Another example using SSL is here:
+A minimal working example is in the `example` folder. I recommend
+using this to build your Docker Flask project.
 
-* [Example Dockerfile](https://github.com/wesbarnett/movie-ratings/blob/master/Dockerfile)
-* [Example Apache configs](https://github.com/wesbarnett/movie-ratings/tree/master/apache)
+Another example using SSL is
+[here](https://github.com/wesbarnett/movie-ratings/blob/master/Dockerfile).
+
+## Docker repository
 
 The Docker repository is located
 [here](https://hub.docker.com/r/wesbarnett/apache-flask/).
-
-When you run your image with `docker run` it will execute `apache2ctl
--D FOREGROUND`. Ports `80` and `443` are exposed, and Apache module
-`ssl` is enabled by default.
