@@ -8,8 +8,8 @@ export MAINTAINER="wes@barnett.science"
 
 all:
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
-		--build-arg GIT_COMMIT=$(VCS_REF) \
-		--build-arg GIT_URL=$(VCS_URL) \
+		--build-arg GIT_COMMIT=$(GIT_COMMIT) \
+		--build-arg GIT_URL=$(GIT_URL) \
 		--build-arg BASE=$(BASE) \
 		--build-arg MAINTAINER=$(MAINTAINER) \
 		-t $(IMAGE_NAME):bionic-$(ARCH) .
