@@ -3,7 +3,7 @@
 A base Docker container for running Python3 Flask/Apache applications
 with an Ubuntu userland.
 
-See [`NEWS.md`](https://github.com/wesbarnett/apache-flask/blob/master/README.md)
+See [`NEWS.md`](https://github.com/wesbarnett/apache-flask/blob/master/NEWS.md)
 for a list of changes.
 
 ## Usage
