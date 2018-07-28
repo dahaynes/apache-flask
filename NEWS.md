@@ -1,5 +1,8 @@
 # NEWS
 
+## Unreleased
+- Fix typo in README
+
 ## Release 0.1 2018-07-28
 - Created Dockerfile
 - Created Makefile
